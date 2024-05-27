@@ -1,5 +1,5 @@
-# Conversor-moedas-One-alura-Java
-# Desafio de Conversor de Moedas
+# Conversor de Moedas
+# Desafio Alura Challenges Oracle-ONE BR - Back End - Turma 6 - 2024
 
 ## Descrição do Desafio
 
