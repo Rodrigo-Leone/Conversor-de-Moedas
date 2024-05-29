@@ -22,7 +22,7 @@ public class SubMenu3 {
             System.out.println(e.getMessage());
         }
 
-        while (opcao != 2) {
+        while (true) {
             System.out.println("\n-------------------------------------------------------");
             System.out.println("1 - Voltar");
             System.out.println("2 - sair");

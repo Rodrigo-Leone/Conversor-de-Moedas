@@ -11,7 +11,7 @@ public class MenuPrincipal {
 
         opcoes.showMenu();
 
-        while (select != 7) {
+        while (true) {
 
             select = leitor.nextInt();
 
