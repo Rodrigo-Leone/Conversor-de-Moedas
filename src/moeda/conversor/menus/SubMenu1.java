@@ -3,6 +3,7 @@ package moeda.conversor.menus;
 import moeda.conversor.classes.Conversao;
 import moeda.conversor.consultaApi.ConsultaConversao;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SubMenu1 {
@@ -15,7 +16,7 @@ public class SubMenu1 {
             ConsultaConversao teste = new ConsultaConversao();
             System.out.println("Real para Dollar");
             System.out.println("Entre com o valor para conversão: ");
-            String valor = scan.nextLine();
+            String valor = scan.next();
             Conversao teste1 = teste.buscaConversao("BRL", "USD", valor.replace(",", "."));
             System.out.println(teste1.toString());
         } catch (RuntimeException e) {
@@ -27,9 +28,19 @@ public class SubMenu1 {
             System.out.println("1 - Voltar");
             System.out.println("2 - sair");
             System.out.println("-------------------------------------------------------");
-            
-            opcao = scan.nextInt();
-            
+
+            try {
+                opcao = scan.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.printf("Por favor, insira um número válido%n%n");
+                System.out.println("\n-------------------------------------------------------");
+                System.out.println("1 - Voltar");
+                System.out.println("2 - sair");
+                System.out.println("-------------------------------------------------------");
+                scan.next();
+                continue;
+            }
+
             if(opcao == 1) {
                 MenuPrincipal menu = new MenuPrincipal();
                 menu.menuPrincipal();

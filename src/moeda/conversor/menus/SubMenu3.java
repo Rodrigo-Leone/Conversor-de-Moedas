@@ -3,6 +3,7 @@ package moeda.conversor.menus;
 import moeda.conversor.classes.Conversao;
 import moeda.conversor.consultaApi.ConsultaConversao;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class SubMenu3 {
@@ -28,7 +29,17 @@ public class SubMenu3 {
             System.out.println("2 - sair");
             System.out.println("-------------------------------------------------------");
 
-            opcao = scan.nextInt();
+            try {
+                opcao = scan.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.printf("Por favor, insira um número válido%n%n");
+                System.out.println("\n-------------------------------------------------------");
+                System.out.println("1 - Voltar");
+                System.out.println("2 - sair");
+                System.out.println("-------------------------------------------------------");
+                scan.next();
+                continue;
+            }
 
             if(opcao == 1) {
                 MenuPrincipal menu = new MenuPrincipal();

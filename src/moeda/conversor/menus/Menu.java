@@ -2,7 +2,7 @@ package moeda.conversor.menus;
 
 public class Menu {
     public void showMenu() {
-        System.out.println("\n----------------- CONVERSOR DE MOEDAS -----------------");
+        System.out.println("----------------- CONVERSOR DE MOEDAS -----------------");
         System.out.println("-------------------------------------------------------");
         System.out.println("                    MENU DE OPÇÕES                     ");
         System.out.println("1 - Converter de Real(BRL) para Dollar(USD)");

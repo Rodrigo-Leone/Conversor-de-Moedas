@@ -1,10 +1,12 @@
 package moeda.conversor.menus;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuPrincipal {
     public void menuPrincipal() {
         Scanner leitor = new Scanner(System.in);
+        System.out.println("\n");
         Menu opcoes = new Menu();
 
         int select;
@@ -13,7 +15,14 @@ public class MenuPrincipal {
 
         while (true) {
 
-            select = leitor.nextInt();
+            try {
+                select = leitor.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.printf("Por favor, insira um número válido%n%n");
+                opcoes.showMenu();
+                leitor.next();
+                continue;
+            }
 
             if(select == 1){
                 SubMenu1 menu = new SubMenu1();
@@ -41,8 +50,4 @@ public class MenuPrincipal {
             }
         }
     }
-//    public void exibir() {
-//        SubMenu2 menu = new SubMenu2();
-//        menu.ConversaoUSD_BRL();
-//    }
 }
