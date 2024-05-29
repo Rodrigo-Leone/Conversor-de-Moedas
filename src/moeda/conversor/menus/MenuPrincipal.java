@@ -4,22 +4,21 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuPrincipal {
-    public void menuPrincipal() {
+    public static void menuPrincipal() {
         Scanner leitor = new Scanner(System.in);
         System.out.println("\n");
         Menu opcoes = new Menu();
 
         int select;
 
-        opcoes.showMenu();
-
         while (true) {
+
+            opcoes.showMenu();
 
             try {
                 select = leitor.nextInt();
             } catch (InputMismatchException e) {
-                System.out.printf("Por favor, insira um número válido%n%n");
-                opcoes.showMenu();
+                System.out.println("\nPor favor, insira um número válido\n");
                 leitor.next();
                 continue;
             }
@@ -42,11 +41,11 @@ public class MenuPrincipal {
             } else if (select == 6) {
                 SubMenu6 menu = new SubMenu6();
                 menu.ConversaoARS_BRL();
-            } else if (select == 7) {
-                System.out.println("Finalizando a aplicação");
+            } else if (select == 0) {
+                System.out.println("\nFinalizando a aplicação");
                 System.exit(0);
             } else {
-                System.out.println("Insira uma opção válida!");
+                System.out.println("\nInsira uma opção válida!\n");
             }
         }
     }
