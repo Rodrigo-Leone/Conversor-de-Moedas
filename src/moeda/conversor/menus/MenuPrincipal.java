@@ -7,7 +7,7 @@ public class MenuPrincipal {
         Scanner leitor = new Scanner(System.in);
         Menu opcoes = new Menu();
 
-        int select = 0;
+        int select;
 
         opcoes.showMenu();
 

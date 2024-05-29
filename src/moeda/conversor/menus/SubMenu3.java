@@ -9,7 +9,7 @@ public class SubMenu3 {
     public void ConversaoBRL_EUR() {
         Scanner scan = new Scanner(System.in);
 
-        int opcao= 0;
+        int opcao;
 
         try {
             ConsultaConversao teste = new ConsultaConversao();

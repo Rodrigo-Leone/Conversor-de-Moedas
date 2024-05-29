@@ -10,7 +10,7 @@ public class Conversao {
     private final double conversion_rate;
     private final double conversion_result;
 
-    public Conversao(String base_code, String target_code, double amount, double conversion_rate, double conversion_result, String time_last_update_utc) {
+    public Conversao(String base_code, String target_code, double conversion_rate, double conversion_result) {
         this.base_code = base_code;
         this.target_code = target_code;
         this.conversion_rate = conversion_rate;
